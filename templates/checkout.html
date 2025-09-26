@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Checkout</h2>
+{% if success %}
+<p>✅ Order placed successfully! Your Order ID is <strong>{{ order_id }}</strong>.</p>
+{% else %}
+<p>Review your cart and confirm checkout.</p>
+<form method="post">
+    <button type="submit">Confirm Order</button>
+</form>
+{% endif %}
+{% endblock %}
