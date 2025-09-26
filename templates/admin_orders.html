@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Orders</h2>
+{% if orders %}
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Order ID</th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>Item</th>
+        <th>Price</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{ order[0] }}</td>
+        <td>{{ order[1] }}</td>
+        <td>₹{{ order[2] }}</td>
+        <td>{{ order[3] }}</td>
+        <td>₹{{ order[4] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No orders yet.</p>
+{% endif %}
+{% endblock %}
