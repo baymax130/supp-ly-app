@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Cart</h2>
+{% if items %}
+<ul>
+    {% for item in items %}
+    <li>{{ item[1] }} - ₹{{ item[2] }}</li>
+    {% endfor %}
+</ul>
+<p><strong>Total: ₹{{ total }}</strong></p>
+<form method="post" action="{{ url_for('checkout') }}">
+    <button type="submit">Proceed to Checkout</button>
+</form>
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}
+{% endblock %}
